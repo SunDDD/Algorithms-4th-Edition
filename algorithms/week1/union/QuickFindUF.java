@@ -1,4 +1,4 @@
-package algorithms.week1;
+package algorithms.week1.union;
 
 /**
  * @author Carlos
