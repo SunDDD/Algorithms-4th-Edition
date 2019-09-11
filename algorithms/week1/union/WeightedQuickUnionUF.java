@@ -19,15 +19,13 @@ public class WeightedQuickUnionUF {
             id[i] = i;
             sz[i] = 1;
         }
-
     }
 
-    private int root(int p) {
-        while (p != id[p]) {
-            id[p] = id[id[p]]; //路径上的每个节点都指向它在路径上的祖父节点
-            p = id[p];
+    private int root(int i) {
+        while(i != id[i]) {
+            i = id[id[i]];
         }
-        return p;
+        return i;
     }
 
     public boolean connected(int p, int q) {
@@ -47,9 +45,8 @@ public class WeightedQuickUnionUF {
             sz[pRoot] += sz[qRoot];
         } else {
             id[pRoot] = qRoot;
-            sz[qRoot] += sz[pRoot];
+            sz[qRoot] += qRoot;
         }
-
     }
 
     public static void main(String[] args) {
